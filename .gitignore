@@ -19,6 +19,13 @@ target/
 *.iml
 *.ipr
 
+### 환경설정 ###
+.env.example
+*.application.properties
+*.application.yml
+*.application.yaml
+
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
