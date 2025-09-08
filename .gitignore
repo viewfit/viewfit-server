@@ -20,7 +20,7 @@ target/
 *.ipr
 
 ### 환경설정 ###
-.env.example
+.env
 *.application.properties
 *.application.yml
 *.application.yaml
