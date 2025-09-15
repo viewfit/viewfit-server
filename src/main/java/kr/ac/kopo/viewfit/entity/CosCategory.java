@@ -20,10 +20,8 @@ public class CosCategory {
     @Column
     private String name;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "parent_id")
     private CosCategory parentCategory;
 
-    @OneToMany(mappedBy = "parentCategory", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<CosCategory> children =  new ArrayList<>();
 }

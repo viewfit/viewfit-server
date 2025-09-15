@@ -22,20 +22,19 @@ public class Cosmetics {
     @Column(nullable = false)
     private int price;
 
-    @Column
-    private String manufacturer;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "manufacturer_id")
+    private Manufacturer manufacturer;
 
     @Column
     private String description;
 
     @Column
-    private Float rating;
+    private int viewCount;
 
     @Column
-    private int ratingCount;
+    private int sellCount;
 
-    @Column
-    private int view;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
