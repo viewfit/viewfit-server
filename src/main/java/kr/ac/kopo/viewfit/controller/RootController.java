@@ -5,10 +5,7 @@ import kr.ac.kopo.viewfit.entity.Cosmetics;
 import kr.ac.kopo.viewfit.service.CosCategoryService;
 import kr.ac.kopo.viewfit.service.CosmeticsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,7 +20,6 @@ public class RootController {
     CosCategoryService cosCategoryService;
 
     @GetMapping()
-    @ResponseBody
     public List<Cosmetics> index() {
         System.out.println("main 접근");
         
@@ -31,8 +27,12 @@ public class RootController {
     }
 
     @GetMapping("/categories")
-    @ResponseBody
     public List<CosCategory> categories() {
         return cosCategoryService.findAll();
+    }
+
+    @GetMapping("categories/{parent_id}")
+    public List<CosCategory> categories(@PathVariable("parent_id") Long parent_id) {
+        return cosCategoryService.findByParentId(parent_id);
     }
 }

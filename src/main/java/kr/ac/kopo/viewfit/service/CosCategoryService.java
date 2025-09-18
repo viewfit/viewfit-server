@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface CosCategoryService {
     List<CosCategory> findAll();
+
+    List<CosCategory> findByParentId(Long parentId);
 }

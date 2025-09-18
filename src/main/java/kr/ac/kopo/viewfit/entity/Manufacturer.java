@@ -12,12 +12,12 @@ public class Manufacturer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private Integer id;
+    private Long id;
 
     @Column
     private String name;
 
     @Column
-    private int type;
+    private Integer type;
 
 }

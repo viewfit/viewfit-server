@@ -18,4 +18,11 @@ public class CosCategoryServiceImpl implements CosCategoryService {
     public List<CosCategory> findAll() {
         return cosCategoryRepository.findAll();
     }
+
+    @Override
+    public List<CosCategory> findByParentId(Long parentId) {
+        return cosCategoryRepository.findByParentId(parentId);
+    }
+
+
 }
