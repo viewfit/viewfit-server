@@ -1,6 +1,6 @@
 package kr.ac.kopo.viewfit.controller;
 
-import kr.ac.kopo.viewfit.entity.CosCategory;
+import kr.ac.kopo.viewfit.entity.Categories;
 import kr.ac.kopo.viewfit.entity.Cosmetics;
 import kr.ac.kopo.viewfit.service.CosCategoryService;
 import kr.ac.kopo.viewfit.service.CosmeticsService;
@@ -28,12 +28,15 @@ public class RootController {
     }
 
     @GetMapping("/categories")
-    public List<CosCategory> categories() {
+    public List<Categories> categories() {
+
         return cosCategoryService.findAll();
     }
 
-    @GetMapping("categories/{parent_id}")
-    public List<CosCategory> categories(@PathVariable("parent_id") Long parent_id) {
-        return cosCategoryService.findByParentId(parent_id);
+    @GetMapping("categories/{parentId}")
+    public List<Categories> categories(@PathVariable("parentId") Long parentId) {
+        System.out.println(parentId);
+
+        return cosCategoryService.findByParentId(parentId);
     }
 }

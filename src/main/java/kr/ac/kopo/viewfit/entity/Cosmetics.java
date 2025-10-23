@@ -1,10 +1,8 @@
 package kr.ac.kopo.viewfit.entity;
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.antlr.v4.runtime.misc.NotNull;
 
 @Entity
 @Table(name = "cosmetics")
@@ -38,6 +36,6 @@ public class Cosmetics {
 
     @ManyToOne
     @JoinColumn(name = "category_id")
-    private CosCategory cosCategory;
+    private Categories categories;
 
 }

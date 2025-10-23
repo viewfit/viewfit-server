@@ -1,12 +1,11 @@
 package kr.ac.kopo.viewfit.service;
 
-import kr.ac.kopo.viewfit.entity.CosCategory;
-import kr.ac.kopo.viewfit.entity.Cosmetics;
+import kr.ac.kopo.viewfit.entity.Categories;
 
 import java.util.List;
 
 public interface CosCategoryService {
-    List<CosCategory> findAll();
+    List<Categories> findAll();
 
-    List<CosCategory> findByParentId(Long parentId);
+    List<Categories> findByParentId(Long parentId);
 }

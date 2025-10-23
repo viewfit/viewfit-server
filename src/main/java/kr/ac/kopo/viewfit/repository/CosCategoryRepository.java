@@ -1,6 +1,6 @@
 package kr.ac.kopo.viewfit.repository;
 
-import kr.ac.kopo.viewfit.entity.CosCategory;
+import kr.ac.kopo.viewfit.entity.Categories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -10,10 +10,10 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 @EnableJpaRepositories
-public interface CosCategoryRepository extends JpaRepository<CosCategory, Long> {
+public interface CosCategoryRepository extends JpaRepository<Categories, Long> {
 
-    List<CosCategory> findAll();
+    List<Categories> findAll();
 
-    @Query("SELECT c FROM CosCategory c WHERE c.parentCategory.id = :parentId ")
-    List<CosCategory> findByParentId(@Param("parentId") Long parentId);
+    @Query("SELECT c FROM Categories c WHERE c.id = :parentId ")
+    List<Categories> findByParentId(@Param("parentId") Long parentId);
 }
