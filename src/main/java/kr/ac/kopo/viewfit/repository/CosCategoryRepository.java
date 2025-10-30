@@ -12,8 +12,9 @@ import java.util.List;
 @EnableJpaRepositories
 public interface CosCategoryRepository extends JpaRepository<Categories, Long> {
 
+    @Query("SELECT c FROM Categories c ORDER BY c.id")
     List<Categories> findAll();
 
-    @Query("SELECT c FROM Categories c WHERE c.id = :parentId ")
+    @Query("SELECT c FROM Categories c WHERE c.id = :parentId ORDER BY c.id")
     List<Categories> findByParentId(@Param("parentId") Long parentId);
 }
